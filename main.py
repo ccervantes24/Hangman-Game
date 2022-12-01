@@ -14,7 +14,7 @@ while True:
   letter= input("Enter a letter:")
   for i in word.split():
     if i == letter:
-      print(i)
+      print(letter)
     else:
       print("You lost a live. Try again.")
       lives -= 1
