@@ -1,32 +1,24 @@
-from random import random 
 import random
+from lives import livesGuesses
 
-print("The hangman game will begin and a word has been choosen. You will have 6 lives.")
-
-
-list = ["penguin", "food", "animals", "location", "ghost"]
-word = random.choice(list)
-print(word)
-lives = 6
-
-
-while True:
-  letter= input("Enter a letter:")
-  for i in word.split():
-    if i == letter:
-      print(letter)
-    else:
-      print("You lost a live. Try again.")
-      lives -= 1
-  if lives == 0:
-    print("You lost")
-    break
-
-    
-     
-    
+print(
+    "The hangman game has begun and a word has been choosen. You have 6 lives.")
   
+list = [
+    "penguin", "food", "animals", "location", "ghost", "fire", "heart", "meter", "rizz"
+  ]
+word = random.choice(list)
+lives = 6
+guess = ""
+  
+while len(guess) < len(word) - 1:
+  guess += "_"
+print(''.join(guess))
+
+guess = guess.split("_")
+livesGuesses(lives, word, guess)
 
 
 
+ 
 
